@@ -2,12 +2,11 @@
 
 ## Description
 
-**TODO:** Fill in this part with information about your work this week:
-important design decisions, changes to previous decisions, open questions,
-exciting milestones, preliminary results, etc. Feel free to include images
-(e.g., a sketch of the design or a screenshot of a running program), links to
-code, and any other resources that you think will help clearly convey your
-design process.
+This week I eventually settled down on a design. Since the last update to the project repository, I decided on how to handle circular systems: each rule can have the same inputs and outputs, and will then be run until a fixed point is reached. Additionally, there can be cycles of multiple rules as long as the following constraints are obeyed:
+
+1. All of the variables in the dependency loop (not necessarily ones that go outside the loop) must be *sets*, not just individual values.
+2. All of the inputs that use these variables must be `foreach` inputs.
+3. Each assignment to one of these must be a *union* assignment, not a *replace* assignment. I have not discussed the difference in the past, but I figure this is clear.
 
 ## Questions
 
@@ -15,11 +14,17 @@ design process.
 you need to make, what implementation issue are you trying to solve, or how
 are you evaluating your design and implementation?**
 
+I think this answers all of the major design decisions. There are still implementation decisions to make, given that I have not really started implementing yet.
+
 **What questions do you have for your critique partners? How can they best help
 you?**
 
+The fundamental rule of elegant design, especially in a constrained time budget situation like this: is there anything left to take away? I have sets and unions as a required part of the “downloading from the internet” scenario.
+
 **How much time did you spend on the project this week? If you're working in a
 team, how did you share the labor?**
+
+This is a bit difficult to answer. Not that much, but it’s also a short week.
 
 ## Post-critique summary
 
